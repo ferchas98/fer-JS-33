@@ -36,5 +36,5 @@ function gestionarOrdenes(diaDelMes, cantidadOrdenes, montoPrevisto) {
     console.log("Proporción de órdenes cumplidas respecto al total previsto:", proporcionCumplidas.toFixed(2));
 }
 
-// Ejemplo de uso
+// Uso
 gestionarOrdenes(2, 50, 40);
