@@ -33,7 +33,7 @@ function gestionarOrdenes(diaDelMes, cantidadOrdenes, montoPrevisto) {
         }
     }
 
-    console.log("Proporción de órdenes cumplidas respecto al total previsto:", proporcionCumplidas.toFixed(2));
+    console.log("Proporción de órdenes cumplidas respecto al total previsto:", proporcionCumplidas);
 }
 
 // Uso
