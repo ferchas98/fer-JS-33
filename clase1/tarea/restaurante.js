@@ -1,15 +1,12 @@
-// Función para determinar si un número es par
 function esPar(numero) {
   return numero % 2 === 0;
 }
 
-// Función principal
 function gestionarOrdenes(diaDelMes, cantidadOrdenes, montoPrevisto) {
   console.log("Día del mes:", diaDelMes);
   console.log("Cantidad de órdenes:", cantidadOrdenes);
   console.log("Monto previsto:", montoPrevisto);
 
-  // Calcula la proporción de órdenes cumplidas respecto al total previsto
   const proporcionCumplidas = cantidadOrdenes / montoPrevisto;
 
   if (esPar(diaDelMes)) {
@@ -42,5 +39,4 @@ function gestionarOrdenes(diaDelMes, cantidadOrdenes, montoPrevisto) {
   );
 }
 
-// Ejemplo de uso
-gestionarOrdenes(2, 50, 40); // Día 2, 50 órdenes, monto previsto 40
+gestionarOrdenes(2, 50, 40);
