@@ -1,13 +1,13 @@
-Aqui incluye todas las clases de Kodemia
+Aqui incluye todas las clases de Kodemia del modulo de Js
 
 Metodología
 Sesión 1 - Introducción a JS
 Sesión 2 - Funciones y scopes
-Sesión 3 - Intro a Arreglos y loops
-Sesión 4 - Arrow functions y ejercicios
-Sesión 5 - Callbacks, Funciones como argumentos (HELP)
-Sesión 6 - Objetos
-Sesión 7 - Prototypes y Métodos de String
+Sesión 3 - Arrow functions y ejercicios
+Sesión 4 - Objetos
+Sesión 5 - Prototypes y Métodos de String
+Sesión 6 - Intro a Arreglos y loops
+Sesión 7 - Callbacks, Funciones como argumentos (HELP)
 Sesión 8 - Date, Math y conversiones
 Sesión 9 - Métodos de Array
 Sesión 10 - Métodos de Array Pt2
