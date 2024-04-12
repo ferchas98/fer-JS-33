@@ -26,6 +26,7 @@ console.log(
 // 3. Eliminar palabras cortas
 const eliminarPalabrasCortas = (frase) => {
   const palabras = frase.split(" ");
+  console.log(palabras);
   return palabras.filter((palabra) => palabra.length > 3).join(" ");
 };
 
