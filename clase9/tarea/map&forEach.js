@@ -65,8 +65,14 @@ const direcciones = canes.map(
 );
 
 // 4. Calcular la edad promedio en años humanos
-const edadPromedio =
-  canes.reduce((total, cane) => total + cane.edad, 0) / canes.length;
+// const edadPromedio =
+//   canes.reduce((total, cane) => total + cane.edad, 0) / canes.length;
+
+let sumaEdades = 0;
+canes.forEach((cane) => {
+  sumaEdades += cane.edad;
+});
+const edadPromedio = sumaEdades / canes.length;
 
 // 5. Cambiar el valor de la propiedad "vacunado" a "Si" o "No"
 const vacunadoTexto = canes.map((cane) => ({
