@@ -516,7 +516,7 @@ Ejercicios:Crear funciones que cumplan con los siguientes requerimientos:
     **trimmedSynopsis debe estar limitada a 10 palabras, y debe tener puntos suspensivos al final.
 */
 //
-function obtenerGenerosSinRepetir(movies) {
+const obtenerGenerosSinRepetir = (movies) => {
   const generosUnicos = [];
   movies.forEach((movie) => {
     if (!generosUnicos.includes(movie.genre)) {
@@ -524,12 +524,12 @@ function obtenerGenerosSinRepetir(movies) {
     }
   });
   return generosUnicos;
-}
+};
 
 console.log("obtenerGenerosSinRepetir", obtenerGenerosSinRepetir(movies));
 
 //
-function obtenerDirectoresSinRepetir(movies) {
+const obtenerDirectoresSinRepetir = (movies) => {
   const directoresUnicos = [];
   movies.forEach((movie) => {
     if (!directoresUnicos.includes(movie.director)) {
@@ -537,12 +537,12 @@ function obtenerDirectoresSinRepetir(movies) {
     }
   });
   return directoresUnicos;
-}
+};
 
 console.log("obtenerDirectoresSinRepetir", obtenerDirectoresSinRepetir(movies));
 
 //
-function obtenerActoresProtagonistasSinRepetir(movies) {
+const obtenerActoresProtagonistasSinRepetir = (movies) => {
   const actores = movies.reduce((acumulador, movie) => {
     const nombresActores = movie.protagonists.map((actor) => actor.name);
     nombresActores.forEach((nombreActor) => {
@@ -553,7 +553,7 @@ function obtenerActoresProtagonistasSinRepetir(movies) {
     return acumulador;
   }, []);
   return actores;
-}
+};
 
 console.log(
   "obtenerActoresProtagonistasSinRepetir",
@@ -561,7 +561,7 @@ console.log(
 );
 
 //
-function obtenerClasificacionesSinRepetir(movies) {
+const obtenerClasificacionesSinRepetir = (movies) => {
   const clasificacionesUnicas = [];
   movies.forEach((movie) => {
     if (!clasificacionesUnicas.includes(movie.rating)) {
@@ -569,7 +569,7 @@ function obtenerClasificacionesSinRepetir(movies) {
     }
   });
   return clasificacionesUnicas;
-}
+};
 
 console.log(
   "obtenerClasificacionesSinRepetir",
@@ -577,12 +577,16 @@ console.log(
 );
 
 //
-function obtenerPeliculasPorDuracion(movies, duracionMinima, duracionMaxima) {
+const obtenerPeliculasPorDuracion = (
+  movies,
+  duracionMinima,
+  duracionMaxima
+) => {
   return movies.filter((movie) => {
     const duracion = parseInt(movie.duration);
     return duracion >= duracionMinima && duracion <= duracionMaxima;
   });
-}
+};
 
 console.log(
   "obtenerPeliculasPorDuracion",
@@ -590,9 +594,9 @@ console.log(
 );
 
 //
-function obtenerPeliculasPorClasificacion(movies, clasificacion) {
+const obtenerPeliculasPorClasificacion = (movies, clasificacion) => {
   return movies.filter((movie) => movie.rating === clasificacion);
-}
+};
 
 console.log(
   "obtenerPeliculasPorClasificacion",
@@ -600,11 +604,11 @@ console.log(
 );
 
 //
-function obtenerPeliculasPorRangoDeAños(movies, añoInicio, añoFin) {
+const obtenerPeliculasPorRangoDeAños = (movies, añoInicio, añoFin) => {
   return movies.filter(
     (movie) => movie.releaseYear >= añoInicio && movie.releaseYear <= añoFin
   );
-}
+};
 
 console.log(
   "obtenerPeliculasPorRangoDeAños",
@@ -612,9 +616,9 @@ console.log(
 );
 
 //
-function obtenerPeliculasPorPais(movies, pais) {
+const obtenerPeliculasPorPais = (movies, pais) => {
   return movies.filter((movie) => movie.country === pais);
-}
+};
 
 console.log(
   "obtenerPeliculasPorPais",
@@ -622,14 +626,14 @@ console.log(
 );
 
 //
-function obtenerPeliculasSinOscar(movies) {
+const obtenerPeliculasSinOscar = (movies) => {
   return movies.filter((movie) => movie.oscarAwards === 0);
-}
+};
 
 console.log("obtenerPeliculasSinOscar", obtenerPeliculasSinOscar(movies));
 
 //
-function obtenerCantidadPeliculasPorClasificacion(movies) {
+const obtenerCantidadPeliculasPorClasificacion = (movies) => {
   const clasificaciones = {};
   movies.forEach((movie) => {
     const clasificacion = movie.rating;
@@ -638,7 +642,7 @@ function obtenerCantidadPeliculasPorClasificacion(movies) {
       : 1;
   });
   return clasificaciones;
-}
+};
 
 console.log(
   "obtenerCantidadPeliculasPorClasificacion",
@@ -646,14 +650,14 @@ console.log(
 );
 
 //
-function obtenerCantidadPeliculasPorPais(movies) {
+const obtenerCantidadPeliculasPorPais = (movies) => {
   const paises = {};
   movies.forEach((movie) => {
     const pais = movie.country;
     paises[pais] = paises[pais] ? paises[pais] + 1 : 1;
   });
   return paises;
-}
+};
 
 console.log(
   "obtenerCantidadPeliculasPorPais",
@@ -661,7 +665,7 @@ console.log(
 );
 
 //
-function obtenerEdadPromedioActoresProtagonistas(movies) {
+const obtenerEdadPromedioActoresProtagonistas = (movies) => {
   const totalActores = movies.reduce(
     (total, movie) => total + movie.protagonists.length,
     0
@@ -671,7 +675,7 @@ function obtenerEdadPromedioActoresProtagonistas(movies) {
     return suma + edades.reduce((a, b) => a + b, 0);
   }, 0);
   return sumaEdades / totalActores;
-}
+};
 
 console.log(
   "obtenerEdadPromedioActoresProtagonistas",
@@ -679,14 +683,14 @@ console.log(
 );
 
 //
-function obtenerCantidadPeliculasPorActor(movies, nombreActor) {
+const obtenerCantidadPeliculasPorActor = (movies, nombreActor) => {
   return movies.reduce((total, movie) => {
     const apariciones = movie.protagonists.filter(
       (actor) => actor.name === nombreActor
     ).length;
     return total + apariciones;
   }, 0);
-}
+};
 
 console.log(
   "obtenerCantidadPeliculasPorActor-Leonardo DiCaprio",
@@ -694,7 +698,7 @@ console.log(
 );
 
 //
-function obtenerInformacionPeliculas(movies) {
+const obtenerInformacionPeliculas = (movies) => {
   return movies.map((movie) => {
     const { title, director, duration, synopsis } = movie;
     const trimmedSynopsis = synopsis.split(" ").slice(0, 10).join(" ") + "...";
@@ -703,6 +707,6 @@ function obtenerInformacionPeliculas(movies) {
       trimmedSynopsis,
     };
   });
-}
+};
 
 console.log("obtenerInformacionPeliculas", obtenerInformacionPeliculas(movies));
